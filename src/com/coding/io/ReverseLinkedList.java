@@ -5,8 +5,18 @@ public class ReverseLinkedList {
        ListNode head=null;
 
 
-       public  ListNode reverse(ListNode node){
-        return  node;
+       public  ListNode reverse(ListNode node){    // 85 -> 15 -> 4 -> 20
+           ListNode current = node;
+           ListNode previous = null;
+           ListNode next = null;
+
+           while (current != null){
+               next = current.next;
+               current.next=previous;
+               previous=current;
+               current=next;
+           }
+        return  previous;
        }
 
 
