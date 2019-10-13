@@ -11,10 +11,10 @@ public class ReverseLinkedList {
            ListNode next = null;
 
            while (current != null){
-               next = current.next;
-               current.next=previous;
-               previous=current;
-               current=next;
+               next = current.next; //For assigning the next to current later
+               current.next=previous; //Reverse every pointer starting from the head
+               previous=current; //For assigning values to the reversed nodes
+               current=next; // For keeping the loop moving till end
            }
         return  previous;
        }
